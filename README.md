@@ -5,11 +5,11 @@ Home: https://github.com/noahmorrison/chevron
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/chevron-feedstock/blob/master/LICENSE.txt)
 
 Summary: Mustache templating language renderer
 
-
+Development: https://github.com/noahmorrison/chevron
 
 Current build status
 ====================
