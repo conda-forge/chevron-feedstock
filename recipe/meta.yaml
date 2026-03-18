@@ -6,12 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 87613aafdf6d77b6a90ff073165a61ae5086e21ad49057aa0e53681601800ebf
 
 build:
   noarch: python
-  number: 1
+  number: 2
   entry_points:
     - chevron=chevron:cli_main
   script: {{ PYTHON }} -m pip install . -vv
@@ -19,11 +19,13 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python {{ python_min }}
   run:
-    - python
+    - python >={{ python_min }}
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - chevron
   commands:
